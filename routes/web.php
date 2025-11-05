@@ -13,8 +13,9 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return 'welcome';
+Route::group(['namespace' => "Main"], function ()
+{
+    Route::get('/', 'IndexController');
 });
 
 Auth::routes();
