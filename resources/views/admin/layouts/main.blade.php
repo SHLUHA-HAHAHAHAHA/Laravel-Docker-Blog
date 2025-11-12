@@ -92,14 +92,7 @@
     </nav>
     <!--end::Header-->
     <!--begin::Sidebar-->
-    <aside class="app-sidebar bg-body-secondary shadow" data-bs-theme="dark">
-
-        <!--begin::Sidebar Wrapper-->
-        <div class="sidebar-wrapper">
-
-        </div>
-        <!--end::Sidebar Wrapper-->
-    </aside>
+    @include('admin.include.sidebar')
     <!--end::Sidebar-->
     <!--begin::App Main-->
     @yield('content')
