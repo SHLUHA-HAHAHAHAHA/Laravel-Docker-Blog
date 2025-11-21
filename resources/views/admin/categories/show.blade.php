@@ -7,7 +7,14 @@
         <div class="container-fluid">
             <!--begin::Row-->
             <div class="row">
-                <div class="col-sm-6"><h3 class="mb-0">{{$category->title}}</h3></div>
+                <div class="col-sm-6 d-flex justify-content-between"><h3 class="mb-0">{{$category->title}}</h3>
+                    <h3><a href="{{ route("admin.category.edit", $category->id) }}" class="text-success">Изменить</a></h3>
+                    <form action="{{ route("admin.category.delete", $category->id) }}" method="post">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="border-0 bg-transparent"><h3 href="" class="text-danger" role="button">Удалить</h3></button>
+                    </form>
+                </div>
                 <div class="col-sm-6">
                     <ol class="breadcrumb float-sm-end">
                         <li class="breadcrumb-item"><a href="#">Home</a></li>

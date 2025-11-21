@@ -27,7 +27,7 @@
             <!--begin::Row-->
             <div class="row">
                 <div class="row">
-                    <div class="col-6">
+                    <div class="col-8">
                         <div class="col-12">
                             <a href="{{route('admin.category.create')}}" class="btn btn-primary mb-2">Добавить</a>
                         </div>
@@ -38,7 +38,7 @@
                                 <tr>
                                     <th scope="col">ID</th>
                                     <th scope="col">Название</th>
-                                    <th scope="col">Действие</th>
+                                    <th colspan="3" scope="col" class="text-center">Действие</th>
 
                                 </tr>
                                 </thead>
@@ -47,7 +47,15 @@
                                 <tr>
                                     <th scope="row">{{$category->id}}</th>
                                     <td>{{ $category->title }}</td>
-                                    <td><a href="{{ route("admin.category.show", $category->id) }}">Просмотреть</a></td>
+                                    <td><a href="{{ route("admin.category.show", $category->id) }}">Просмотреть</a> </td>
+                                    <td><a href="{{ route("admin.category.edit", $category->id) }}" class="text-success">Изменить</a></td>
+                                    <td>
+                                        <form action="{{ route("admin.category.delete", $category->id) }}" method="post">
+                                            @csrf
+                                            @method('DELETE')
+                                            <button type="submit" class="border-0 bg-transparent"><p href="" class="text-danger" role="button">Удалить</p></button>
+                                        </form>
+                                    </td>
                                 </tr>
                                 @endforeach
                                 </tbody>
