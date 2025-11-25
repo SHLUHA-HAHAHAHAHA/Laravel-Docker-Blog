@@ -8,6 +8,10 @@
                     <i class="nav-icon fa-solid fa-table"></i>
                     <p>Categories</p>
                 </a>
+                <a href="{{route('admin.tag.index')}}" class="nav-link">
+                    <i class="nav-icon fa-solid fa-table"></i>
+                    <p>Tags</p>
+                </a>
             </li>
         </ul>
 
