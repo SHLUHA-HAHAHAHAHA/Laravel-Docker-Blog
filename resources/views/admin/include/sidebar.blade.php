@@ -6,11 +6,15 @@
             <li class="nav-item">
                 <a href="{{route('admin.category.index')}}" class="nav-link">
                     <i class="nav-icon fa-solid fa-table"></i>
-                    <p>Categories</p>
+                    <p>Категории</p>
                 </a>
                 <a href="{{route('admin.tag.index')}}" class="nav-link">
                     <i class="nav-icon fa-solid fa-table"></i>
-                    <p>Tags</p>
+                    <p>Тэги</p>
+                </a>
+                <a href="{{route('admin.post.index')}}" class="nav-link">
+                    <i class="nav-icon fa-solid fa-table"></i>
+                    <p>Посты</p>
                 </a>
             </li>
         </ul>
