@@ -33,19 +33,19 @@
                             <label for="inputTitle" class="form-label">Название</label>
                             <input type="text" name="title" class="form-control" id="inputTitle" value="{{old('title')}}">
                             @error('title')
-                                <div class="text-danger">Это поле не заполненно</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
                             <label for="inputContent" class="form-label">Контент поста</label>
                             <textarea name="content" class="form-control" id="inputContent">{{old('content')}}</textarea>
                             @error('content')
-                            <div class="text-danger">Это поле не заполненно</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                             <div class="input-group mt-3">
                                 <input type="file" name="main_img" class="form-control" id="inputMainImg">
                                 <label class="input-group-text" for="inputMainImg">Добавить главное изображение</label>
                             </div>
                             @error('main_img')
-                            <div class="text-danger">Это поле не заполненно</div>
+                            <div class="text-danger">{{ $message }}</div>
 
                             @enderror
                             <div class="input-group mt-3">
@@ -53,7 +53,7 @@
                                 <label class="input-group-text" for="inputPreview">Добавить превью </label>
                             </div>
                             @error('preview_img')
-                            <div class="text-danger">Это поле не заполненно</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                             <div class="input-group mt-3">
                                 <select class="form-select" id="selectCategory" name="category_id" required="">
@@ -64,7 +64,7 @@
                                 <label for="selectCategory">Выберите категорию</label>
                             </div>
                             @error('category_id')
-                            <div class="text-danger">Это поле не заполненно</div>
+                            <div class="text-danger">{{ $message }}</div>
                             @enderror
                             <div class="input-group mt-3">
                                 <label for="selcetTags">Выберите тэги</label>
@@ -73,6 +73,9 @@
                                     <option {{ is_array(old('tag_ids')) && in_array($tag->id, old('tag_ids')) ? 'selected' : '' }} value="{{ $tag->id }}">{{ $tag->title }}</option>
                                     @endforeach
                                 </select>
+                                @error('tags_ids')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                         </div>
                         <input type="submit" class="btn btn-primary" value="Добавить">
