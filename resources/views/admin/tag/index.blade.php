@@ -47,10 +47,10 @@
                                 <tr>
                                     <th scope="row">{{$tag->id}}</th>
                                     <td>{{ $tag->title }}</td>
-                                    <td><a href="{{ route("admin.category.show", $tag->id) }}">Просмотреть</a> </td>
-                                    <td><a href="{{ route("admin.category.edit", $tag->id) }}" class="text-success">Изменить</a></td>
+                                    <td><a href="{{ route("admin.tag.show", $tag->id) }}">Просмотреть</a> </td>
+                                    <td><a href="{{ route("admin.tag.edit", $tag->id) }}" class="text-success">Изменить</a></td>
                                     <td>
-                                        <form action="{{ route("admin.category.delete", $tag->id) }}" method="post">
+                                        <form action="{{ route("admin.tag.delete", $tag->id) }}" method="post">
                                             @csrf
                                             @method('DELETE')
                                             <button type="submit" class="border-0 bg-transparent"><p href="" class="text-danger" role="button">Удалить</p></button>
