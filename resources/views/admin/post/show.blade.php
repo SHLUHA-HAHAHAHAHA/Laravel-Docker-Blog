@@ -47,8 +47,8 @@
                                 </tr>
                                 <tbody>
                                 <tr>
-                                    <th scope="row">{{$category->id}}</th>
-                                    <td>{{ $category->title }}</td>
+                                    <th scope="row">{{$post->id}}</th>
+                                    <td>{{ $post->title }}</td>
                                 </tr>
                                 </tbody>
                             </table>
