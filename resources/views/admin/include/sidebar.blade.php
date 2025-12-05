@@ -16,6 +16,10 @@
                     <i class="nav-icon fa-solid fa-table"></i>
                     <p>Посты</p>
                 </a>
+                <a href="{{route('admin.user.index')}}" class="nav-link">
+                    <i class="nav-icon fa-solid fa-table"></i>
+                    <p>Пользователи</p>
+                </a>
             </li>
         </ul>
 
