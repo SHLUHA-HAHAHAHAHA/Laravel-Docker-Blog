@@ -31,12 +31,33 @@
                         @csrf
                         @method('PATCH')
                         <div class="mb-3">
-                            <label for="inputTitle" class="form-label">Название</label>
-                            <input type="text" name="title" class="form-control" id="inputTitle" value="{{$user->name}}">
-                            @error('title')
-                                <div class="text-danger">Это поле не заполненно</div>
+                            <label for="inputTitle" class="form-label">Имя пользователя</label>
+                            <input type="text" name="name" class="form-control" id="inputTitle" value="{{$user->name}}">
+                            @error('name')
+                            <div class="text-danger">Это поле не заполненно</div>
                             @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="inputTitle" class="form-label">Эл. почта</label>
+                            <input type="email" name="email" class="form-control" id="inputTitle" value="{{$user->email}}">
+                            @error('email')
+                            <div class="text-danger">Это поле не заполненно</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectCategory" class="form-label">Выберите роль</label>
+                            <select class="form-select" id="selectCategory" name="role" required="">
+                                @foreach($roles as $id => $role)
+                                    <option value="{{ $id }}"
+                                        {{$id == $user->role ? 'selected' : ''}}
+                                    >{{$role}}</option>
+                                @endforeach
+                            </select>
+                            @error('role')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
+                        <input type="hidden" name="user_id" value="{{$user->id}}">
                         <input type="submit" class="btn btn-primary" value="Обновить">
                     </form>
                 </div>

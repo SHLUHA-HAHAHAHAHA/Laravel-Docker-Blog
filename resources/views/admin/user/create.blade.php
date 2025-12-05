@@ -30,13 +30,41 @@
                     <form action="{{route('admin.user.store')}}" class="col-4" method="post">
                         @csrf
                         <div class="mb-3">
-                            <label for="inputTitle" class="form-label">Название</label>
+                            <label for="inputTitle" class="form-label">Имя пользователя</label>
                             <input type="text" name="name" class="form-control" id="inputTitle">
-                            @error('title')
+                            @error('name')
                                 <div class="text-danger">Это поле не заполненно</div>
                             @enderror
                         </div>
+                        <div class="mb-3">
+                            <label for="inputTitle" class="form-label">Эл. почта</label>
+                            <input type="email" name="email" class="form-control" id="inputTitle">
+                            @error('email')
+                                <div class="text-danger">Это поле не заполненно</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="inputTitle" class="form-label">Пароль</label>
+                            <input type="text" name="password" class="form-control" id="inputTitle">
+                            @error('password')
+                                <div class="text-danger">Это поле не заполненно</div>
+                            @enderror
+                        </div>
+                        <div class="mb-3">
+                            <label for="selectCategory" class="form-label">Выберите роль</label>
+                            <select class="form-select" id="selectCategory" name="role" required="">
+                                @foreach($roles as $id => $role)
+                                    <option value="{{ $id }}"
+                                        {{$id == old('role') ? 'selected' : ''}}
+                                    >{{$role}}</option>
+                                @endforeach
+                            </select>
+                            @error('role')
+                            <div class="text-danger">{{ $message }}</div>
+                            @enderror
+                        </div>
                         <input type="submit" class="btn btn-primary" value="Добавить">
+
                     </form>
                 </div>
 
