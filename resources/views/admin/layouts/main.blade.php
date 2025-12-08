@@ -79,11 +79,17 @@
         <!--begin::Container-->
         <div class="container-fluid">
             <!--begin::Start Navbar Links-->
-            <ul class="navbar-nav">
+            <ul class="navbar-nav w-100 d-flex justify-content-between">
                 <li class="nav-item">
                     <a class="nav-link" data-lte-toggle="sidebar" href="#" role="button">
                         <i class="bi bi-list"></i>
                     </a>
+                </li>
+                <li class="nav-item">
+                    <form action=" {{ route('logout') }} " method="post">
+                        @csrf
+                        <input class="btn btn-outline-danger" value="Выйти" type="submit">
+                    </form>
                 </li>
             </ul>
             <!--end::Start Navbar Links-->
