@@ -33,21 +33,14 @@
                             <label for="inputTitle" class="form-label">Имя пользователя</label>
                             <input type="text" name="name" class="form-control" id="inputTitle">
                             @error('name')
-                                <div class="text-danger">Это поле не заполненно</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="mb-3">
                             <label for="inputTitle" class="form-label">Эл. почта</label>
                             <input type="email" name="email" class="form-control" id="inputTitle">
                             @error('email')
-                                <div class="text-danger">Это поле не заполненно</div>
-                            @enderror
-                        </div>
-                        <div class="mb-3">
-                            <label for="inputTitle" class="form-label">Пароль</label>
-                            <input type="text" name="password" class="form-control" id="inputTitle">
-                            @error('password')
-                                <div class="text-danger">Это поле не заполненно</div>
+                                <div class="text-danger">{{ $message }}</div>
                             @enderror
                         </div>
                         <div class="mb-3">
